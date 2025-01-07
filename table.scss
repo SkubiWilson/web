@@ -1,0 +1,117 @@
+// Загальні стилі для body
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+  }
+  
+  // Заголовок (header) зі стилями для навігації
+  header {
+    background-color: #f8f9fa; // Фон заголовка
+    padding: 20px; // Внутрішні відступи для заголовка
+    
+    .nav-links {
+      text-align: left; // Центрування тексту
+      
+      a {
+        text-decoration: none; // Прибрати підкреслення
+        color: black; // Колір тексту
+        padding: 10px 15px; // Внутрішній відступ для посилань
+        display: inline; // Вирівнювання в один ряд
+        margin: 0; // Прибрати відступи між посиланнями
+      }
+    }
+  }
+  
+  // Стилі для меню
+  .menu {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  
+    .menu-item {
+      position: relative;
+      padding: 10px 15px;
+      cursor: pointer;
+  
+      .submenu {
+        display: none; // Сховати підменю
+        position: absolute;
+        top: 100%; // Відстань від основного меню
+        left: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+  
+        div {
+          padding: 10px 15px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #f0f0f0; // Зміна фону для елементів підменю
+          }
+        }
+      }
+  
+      &:hover .submenu {
+        display: block; // Показати підменю при наведенні
+      }
+    }
+  }
+  
+  // Мобільна версія для меню
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column; // Вертикальне меню для мобільних
+      align-items: flex-start; // Вирівнювання зліва
+  
+      .submenu {
+        position: static; // Скидання позиціонування для підменю
+      }
+    }
+  }
+  
+  // Секції продуктів і категорій
+  .product-card, .category-card, .blog-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card img, .category-card img, .blog-card img {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .p-3 {
+    padding: 1rem;
+  }
+  
+  h1, h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  // Стилі для банерів
+  .banner {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: 8px;
+  }
+  
+  // Футер
+  footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    
+    p {
+      color: #666;
+    }
+  }
+  
