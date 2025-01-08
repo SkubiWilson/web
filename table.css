@@ -1,109 +1,399 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
+.photo{
+  width: 30%;
 }
 
-header {
-  background-color: #f8f9fa;
-  padding: 20px;
-}
-header .nav-links {
-  text-align: left;
-}
-header .nav-links a {
-  text-decoration: none;
-  color: black;
-  padding: 10px 15px;
-  display: inline;
-  margin: 0;
+.flex {  
+  display: flex; /* Використовуємо Flexbox */  
+  justify-content: space-between; /* Розподіляємо простір між елементами */  
+  align-items: center; /* Вирівнюємо по вертикалі */  
+}  
+
+.bbt {  
+  margin-left: auto; /* Відстань до лівого краю */ 
+  border-radius: 8px; 
 }
 
-.menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.product-flx-b {
+  display: flex;  
+  flex-direction: row; /* Встановлює горизонтальне розташування елементів */
+  align-items: center; /* Вирівнює елементи по вертикалі всередині контейнера */
+  justify-content: center; /* Вирівнює елементи по горизонталі */
+  margin: 20px;
+  flex: 1 1 30%; /* Три елементи в ряд, без задання явних розмірів */ 
+  gap: 20px; /* Додає проміжок між елементами */
+
+}
+.button-container {  
+  margin-top: 20px; /* Відступ над кнопкою */  
+}
+.button-sale {  
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  position: relative;
+  border-radius: 8px; /* Закруглені краї */  
+  margin: 50px; /* Відступ навколо кнопки */  
+  padding: 10px 20px; /* Відступи всередині кнопки */  
+  font-size: 16px; /* Розмір шрифту */
 }
-.menu .menu-item {
-  position: relative;
-  padding: 10px 15px;
-  cursor: pointer;
+.card-img-top{
+  height: 230px;
+  width: 100%;
 }
-.menu .menu-item .submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+.container { 
+  margin: 0;  
+  padding: 0;  
 }
-.menu .menu-item .submenu div {
-  padding: 10px 15px;
-  cursor: pointer;
-}
-.menu .menu-item .submenu div:hover {
-  background-color: #f0f0f0;
-}
-.menu .menu-item:hover .submenu {
-  display: block;
+/* Основні стилі для всього документа */  
+body, html {   
+  font-family: Arial, sans-serif; /* Встановлює шрифт для всього документа */  
+  background-color: #f0f0f0; /* Колір фону для тіла */  
+}  
+
+/* Стилі для заголовка */  
+header {  
+  background-color: #f8f9fa; /* Колір фону заголовка */  
+  padding: 20px; /* Внутрішній відступ заголовка */  
+}  
+
+/* Стилі для навігаційних посилань в заголовку */  
+header .nav-links {  
+  text-align: left; /* Вирівнює навігаційні посилання вліво */  
+}  
+
+header .nav-links a {  
+  text-decoration: none; /* Прибирає підкреслення з посилань */  
+  color: black; /* Колір тексту посилань */  
+  padding: 10px 15px; /* Внутрішні відступи для посилань */  
+  display: inline; /* Відображає посилання в рядку */  
+  margin: 0; /* Прибирає відступи */  
+}  
+
+/* Стилі для меню */  
+.menu {  
+  display: flex; /* Використання Flexbox для меню */  
+  justify-content: space-around; /* Рівномірний розподіл пунктів меню */  
+  position: relative; /* Позиція для відносних елементів */  
+}  
+
+.menu .menu-item {  
+  position: relative; /* Відносна позиція для підменю */  
+  padding: 10px 15px; /* Внутрішні відступи для пунктів меню */  
+  cursor: pointer; /* Змінює курсор при наведенні */  
+}  
+
+/* Стилі для підменю */  
+.menu .menu-item .submenu {  
+  display: none; /* Сховати підменю за замовчуванням */  
+  position: absolute; /* Абсолютна позиція для підменю */  
+  top: 100%; /* Розташування підменю під пунктом меню */  
+  left: 0; /* Вирівнювання зліва */  
+  background-color: white; /* Колір фону підменю */  
+  border: 1px solid #ccc; /* Рамка підменю */  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь підменю */  
+  z-index: 1000; /* Високий z-index для відображення поверх інших елементів */  
+}  
+
+.menu .menu-item .submenu div {  
+  padding: 10px 15px; /* Внутрішні відступи для пунктів підменю */  
+  cursor: pointer; /* Змінює курсор при наведенні */  
+}  
+
+.menu .menu-item .submenu div:hover {  
+  background-color: #f0f0f0; /* Колір фону пункту підменю при наведенні */  
+}  
+
+/* Показати підменю при наведенні на пункт меню */  
+.menu .menu-item:hover .submenu {  
+  display: block; /* Відображає підменю при наведенні */  
+}  
+
+/* Адаптивні стилі для меню на малих екранах */  
+@media (max-width: 768px) {  
+  .menu {  
+      flex-direction: column; /* Вертикальне розташування для малих екранів */  
+  }  
+  .menu .submenu {  
+      position: static; /* Стаціонарне розташування підменю */  
+  }  
+}  
+
+ 
+
+.product-card img, .category-card img, .blog-card img {  
+  border-radius: 8px 8px 0 0; /* Заокруглення верхніх кутів зображень */  
+}  
+
+/* Стилі для картки продукту */  
+.product-card {  
+  background-color: #fff; /* Фон картки */  
+  border: 1px solid #ddd; /* Рамка картки */  
+  border-radius: 8px; /* Заокруглені кути */  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь картки */  
+  padding: 15px; /* Внутрішні відступи для картки */  
+  height: 100%; /* Забезпечує заповнення доступного простору */  
+  display: flex; /* Використання Flexbox */  
+  flex-direction: column; /* Вертикальне вирівнювання елементів */  
+  justify-content: space-between; /* Розподіл простору між елементами */  
+}  
+
+.product-card img {  
+  width: 100%; /* Повна ширина зображення */  
+  height: auto; /* Автоматична висота зображення */  
+  border-radius: 8px 8px 0 0; /* Заокруглені верхні кути зображення */  
+}   
+
+.card-text {  
+  overflow: hidden;  
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;  
+  -webkit-line-clamp: 2; /* Кількість рядків */  
+  line-clamp: 2; /* Кількість рядків */  
 }
 
-@media (max-width: 768px) {
-  .menu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+/* Стилізація заголовків і цін */  
+.product-title {  
+  font-size: 16px; /* Розмір шрифту заголовка */  
+  font-weight: bold; /* Товстий шрифт */  
+}  
+
+.price-rating-container {  
+  display: flex; /* Використання Flexbox для ціни і рейтингу */  
+  justify-content: space-between; /* Розподіл простору між елементами */  
+  margin-top: auto; /* Відкладення елемента внизу картки */  
+  overflow: hidden; /* Сховати все, що виходить за межі контейнера */
+}  
+  
+  /* Стилі для заголовка продукту */  
+  .product-title {  
+      display: flex; /* Використання Flexbox */  
+      justify-content: space-between; /* Розташування назви і іконки серця на протилежних краях */  
+      align-items: center; /* Вертикальне вирівнювання */  
+      margin: 0; /* Прибрано відступи */  
+  }  
+  
+  /* Стилі для іконки серця */  
+  .heart-icon {  
+      color: red; /* Колір серця */  
+      margin-left: 5px; /* Відстань між текстом та серцем */  
+  }  
+  
+  /* Стилі для доступності продукту */  
+  .availability {  
+      color: gray; /* Колір тексту доступності */  
+  }  
+  
+  /* Контейнер для ціни і рейтингу */  
+  .rating-container {  
+    overflow: hidden; /* Сховати переповнений текст */  
+    text-overflow: ellipsis; /* Додає "..." в кінці переповненого тексту */  
+    white-space: nowrap; /* Запобігає переносу тексту на новий ряд */  
+}
+  
+  /* Стилі для поточної ціни */  
+  .current-price {  
+      margin-right: 10px; /* Відстань між поточною ціною та старою ціною */  
+      font-weight: bold; /* Товстий шрифт для поточної ціни */  
+  }  
+  
+  /* Стилі для старої ціни */  
+  .original-price {  
+      margin-right: 10px; /* Відстань між старою ціною та рейтингом */  
+  }  
+  
+  /* Стилі для рейтингу */  
+  .rating {  
+    display: flex; /* Використання Flexbox для зірок рейтингу */  
+    overflow: hidden; /* Сховати все, що виходить за межі контейнера */  
+    white-space: nowrap; /* Запобігає переносу тексту на новий ряд */   
+}  
+
+.star {  
+    color: gold; /* Колір зірок */  
+    font-size: 16px; /* Розмір зірок */  
+    margin-right: 2px; /* Відстань між зірочками */  
+}
+  
+  /* Елементи тексту в картці */  
+  .card-text {  
+      margin-right: 10px; /* Відстань між ціною та зірками */  
+  }  
+  
+  /* Позиція для зірок рейтингу */  
+  .position {  
+      display: flex; /* Використання Flexbox для зірок */  
+      margin-left: 10px; /* Відступ зліва, щоб зірки не злипалися з ціною */  
+  }  
+  
+  /* Контейнер для продуктів */  
+  .products-container {  
+      padding: 20px; /* Відступи навколо секції з продуктами */  
+      
+  }  
+  
+  /* Стилі для вкладок продуктів */  
+  .product-tabs {  
+      display: flex; /* Вирівнює заголовки у один ряд */  
+      justify-content: center; /* Центрує заголовки */  
+      margin-bottom: 20px; /* Відстань між заголовками та картками */  
+  }  
+  
+  /* Стилі для окремих вкладок */  
+  .tab {  
+      margin: 0 20px; /* Відступи між вкладками */  
+      cursor: pointer; /* Змінює курсор при наведенні */  
+      transition: color 0.3s, transform 0.3s; /* Анімація зміни кольору та трансформації */  
+  }  
+  
+  /* Стилі для вкладки при наведенні */  
+  .tab:hover {  
+      color: #007bff; /* Колір при наведенні */  
+      transform: scale(1.1); /* Збільшення вкладки при наведенні */  
+  }  
+  
+  /* Грід для продуктів */  
+  .product-grid {  
+      display: grid; /* Використання CSS Grid */  
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* Визначення колонок */  
+      gap: 20px; /* Відступ між елементами */  
+      max-width: 1200px; /* Максимальна ширина контейнера */  
+      margin: 0 auto; /* Центрує грід у контейнері */  
+      overflow-x: auto; /* Додає горизонтальну прокрутку, якщо потрібно */  
+      white-space: nowrap; /* Запобігає переносу елементів на новий ряд */  
+  }  
+  
+  /* Стилі для окремих продуктів в гріді */  
+  .product-item {  
+      background-color: #ccc; /* Фон елемента */  
+      padding: 20px; /* Внутрішній відступ */  
+      text-align: center; /* Вирівнювання тексту */  
+      min-width: 250px; /* Мінімальна ширина картки */  
+  }  
+  
+  /* Стилі для тестового тексту */  
+  .test-text {  
+      text-align: center; /* Центрує текст */  
+      margin-top: 20px; /* Відстань зверху */  
+      font-size: 16px; /* Розмір шрифту */  
+      color: #555; /* Колір тексту */  
+  }  
+  
+  /* Стилі для квадратів */  
+  .stretched-square {  
+      width: 106%; /* Розтягує квадрат на повну ширину контейнера */  
+      height: 300px; /* Висота квадрата */  
+      background-color: gray; /* Колір фону */  
+      margin: 10px 0; /* Відступи зверху і знизу */  
+      padding: 0; /* Внутрішні відступи */  
+      box-sizing: border-box; /* Включає padding і border у загальні розміри */  
+  }  
+  
+  /* Стилі для футера */  
+  footer {  
+      background-color: #f8f9fa; /* Колір фону футера */  
+      padding: 2rem 0; /* Внутрішні відступи футера */  
+      margin-top: 4rem; /* Відстань зверху */  
+  }  
+  
+  footer p {  
+      color: #666; /* Колір тексту в футері */  
+  }  
+  
+  /* Стилі для заголовків */  
+  h1, h2 {  
+      margin-bottom: 1.5rem; /* Відступ знизу у заголовків */  
+  }  
+  
+  /* Стилі для тексту по центру */  
+  .text-center {  
+      text-align: center; /* Центрування тексту */  
+  }  
+  
+  /* Стилі для банера */  
+  .banner {  
+      min-width: 35%; /* Максимальна ширина для банера */  
+      height: 360px; /* Автоматична висота для зображення */   
+      border-radius: 8px; /* Закруглення кутів банера */  
+  }  
+  
+  /* Стилі для navbar-nav */  
+  .navbar-nav {  
+      display: flex; /* Робить навігаційне меню флекс-контейнером */  
+      justify-content: center; /* Центрує елементи по горизонталі */  
+      width: 100%; /* Забезпечує, що навігаційне меню займає всю ширину */  
+  }  
+  
+  /* Стилі для пунктів меню в навігації */  
+  .nav-item {  
+      margin: 0 15px; /* Відступи між пунктами меню */  
+  }  
+  
+  /* Стилі для класу p-3 */  
+  .p-3 {  
+      padding: 1rem; /* Внутрішній відступ */  
+  }  
+  
+  /* Стилі для карток продуктів та категорій */  
+  .product-card, .category-card, .blog-card {  
+      background-color: #fff; /* Колір фону карток */  
+      border: 1px solid #ddd; /* Рамка карток */  
+      border-radius: 8px; /* Закруглені кути */  
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тінь карток */  
+  }  
+  
+  /* Стилі для зображень в картках продуктів, категорій, блогів */  
+  .product-card img, .category-card img, .blog-card img {  
+      border-radius: 8px 8px 0 0; /* Закруглення верхніх кутів для зображень */  
   }
-  .menu .submenu {
-    position: static;
-  }
-}
-.product-card, .category-card, .blog-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
-.product-card img, .category-card img, .blog-card img {
-  border-radius: 8px 8px 0 0;
-}
+  .footer {  
+    background-color: #f2f2f2; /* Колір фону */  
+    padding: 20px; /* Внутрішні відступи */  
+}  
 
-.p-3 {
-  padding: 1rem;
-}
+.footer-content {  
+    display: flex; /* Використовуємо Flexbox */  
+    justify-content: space-between; /* Розподіл простору між елементами */  
+    align-items: center; /* Вирівнювання по центру вертикально */  
+    max-width: 1200px; /* Максимальна ширина */  
+    margin: 0 auto; /* Центрування */  
+}  
 
-h1, h2 {
-  margin-bottom: 1.5rem;
-}
+.logo-section {  
+    display: flex; /* Гнучке вирівнювання для логотипу та іконок */  
+    flex-direction: column; /* Вертикальне вирівнювання */  
+    align-items: flex-start; /* Вирівнювання по лівому краю */  
+}  
 
-.text-center {
-  text-align: center;
-}
+.social-icons {  
+    margin-top: 10px; /* Відступ для іконок */  
+}  
 
-.banner {
-  max-width: 100%;
-  height: auto;
-  margin-top: 2rem;
-  border-radius: 8px;
-}
+.social-icons a {  
+    margin-right: 10px; /* Відступ між іконками */  
+}  
 
-footer {
-  background-color: #f8f9fa;
-  padding: 2rem 0;
-  margin-top: 4rem;
-}
-footer p {
-  color: #666;
+.menu-section {  
+    display: flex; /* Використовуємо Flexbox для меню */  
+    gap: 40px; /* Відстань між категоріями меню */  
+}  
+
+.menu-section h2 {  
+    margin-bottom: 10px; /* Відступ для заголовків меню */  
+}  
+
+.menu-section ul {  
+    list-style: none; /* Скидання стандартних стилів списку */  
+    padding: 0; /* Скидання відступу */  
+}  
+
+.menu-section ul li {  
+    margin: 5px 0; /* Відступи для пунктів меню */  
+}  
+
+.footer-bottom {  
+    background-color: #ccc; /* Колір фону для нижньої частини */  
+    text-align: center; /* Центруємо текст */  
+    padding: 10px 0; /* Внутрішні відступи */  
+}  
+
+.footer-bottom p {  
+    margin: 0; /* Скидання змаргіну для абзацу */  
 }
